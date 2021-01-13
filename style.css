@@ -11,3 +11,21 @@ body {
     height: 5px;
     background-color: #002F63;
 }
+
+#time {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #2B6ABC;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    font-size: 40px;
+}
+
+.splitText {
+    color: #0C53A6;
+    font-size: 24px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-left: 12px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
