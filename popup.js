@@ -17,28 +17,23 @@ updateClock = function() {
     clockDisp();
 };
 
-document.addEventListener("keydown", function(e) {
-    if (!e.repeat) {
-        if (e.altKey) {
-            if (AltToStartClock) {
-                clock = 0;
-                splits.innerHTML = "";
-                mainLoop = setInterval(updateClock, 10);
-                AltToStartClock = false;
-            }
-            else {
-                clearInterval(mainLoop);
-                e.preventDefault();
-                AltToStartClock = true;
-            }
-            e.preventDefault();
+window.addEventListener("message", function(e) {
+    if (e.data == "start/stop") {
+        if (AltToStartClock) {
+            clock = 0;
+            splits.innerHTML = "";
+            mainLoop = setInterval(updateClock, 10);
+            AltToStartClock = false;
         }
-        else if (e.shiftKey) {
-            splitText = document.createElement("div");
-            splitText.innerHTML = time.innerText;
-            splitText.setAttribute("class", "splitText");
-            splits.appendChild(splitText);
-            e.preventDefault();
+        else {
+            clearInterval(mainLoop);
+            AltToStartClock = true;
         }
+    }
+    else if (e.data == "record split") {
+        splitText = document.createElement("div");
+        splitText.innerHTML = time.innerText;
+        splitText.setAttribute("class", "splitText");
+        splits.appendChild(splitText);
     }
 }, false);

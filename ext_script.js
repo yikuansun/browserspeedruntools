@@ -12,6 +12,19 @@ window.addEventListener("load", function load(event) {
     
     iframe.src = chrome.runtime.getURL("popup.html");
     document.body.appendChild(iframe);
+
+    document.addEventListener("keydown", function(e) {
+        if (!e.repeat) {
+            if (e.key == "Alt") {
+                iframe.contentWindow.postMessage("start/stop");
+                e.preventDefault();
+            }
+            else if (e.key == "Shift") {
+                iframe.contentWindow.postMessage("record split");
+                e.preventDefault();
+            }
+        }
+    }, false);
 });
 
 function toggle_iframe() {
