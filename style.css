@@ -4,6 +4,8 @@ body {
     background-image: url(bg_translucent.png);
     background-size: cover;
     margin: 0;
+    display: flex;
+    flex-flow: column;
 }
 
 #decobar {
@@ -21,6 +23,11 @@ body {
     font-size: 40px;
 }
 
+#splits {
+    flex: 1 1 auto;
+    overflow: scroll;
+}
+
 .splitText {
     color: #0C53A6;
     font-size: 24px;
@@ -29,3 +36,4 @@ body {
     margin-top: 2px;
     margin-bottom: 2px;
 }
+
