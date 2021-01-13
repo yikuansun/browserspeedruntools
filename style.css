@@ -1,0 +1,13 @@
+body {
+    width: 250px;
+    height: 400px;
+    background-image: url(bg_translucent.png);
+    background-size: cover;
+    margin: 0;
+}
+
+#decobar {
+    width: 100%;
+    height: 5px;
+    background-color: #002F63;
+}
