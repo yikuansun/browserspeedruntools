@@ -95,6 +95,7 @@ window.addEventListener("load", function load(event) {
                 splitText.style.marginTop = "2px";
                 splitText.style.marginBottom = "2px";
                 splits.appendChild(splitText);
+                splits.scrollTop = splits.scrollHeight;
                 e.preventDefault();
             }
         }
