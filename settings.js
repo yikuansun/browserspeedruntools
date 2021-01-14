@@ -52,10 +52,12 @@ chrome.storage.sync.get(null, function(data) {
     topbottom = data.topbottom;
     leftright = data.leftright;
     hueRotate = data.hueRotate;
-    document.getElementById("alt").value = startKey;
-    document.getElementById("shift").value = splitKey;
-    document.getElementById("verticalAlign").value = topbottom;
-    document.getElementById("horizontalAlign").value = leftright;
-    document.getElementById("hueslider").value = hueRotate;
-    document.getElementById("colordisp").style.filter = "hue-rotate(" + hueRotate.toString() + "deg)";
+    if (startKey) {
+        document.getElementById("alt").value = startKey;
+        document.getElementById("shift").value = splitKey;
+        document.getElementById("verticalAlign").value = topbottom;
+        document.getElementById("horizontalAlign").value = leftright;
+        document.getElementById("hueslider").value = hueRotate;
+        document.getElementById("colordisp").style.filter = "hue-rotate(" + hueRotate.toString() + "deg)";
+    }
 });
