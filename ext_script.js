@@ -67,6 +67,14 @@ window.addEventListener("load", function load(event) {
         splits.style.flex = "1 1 auto";
         splits.style.overflow = "scroll";
         stopwatch.appendChild(splits);
+
+        keylog = document.createElement("div");
+        keylog.style.fontSize = "12px";
+        keylog.style.padding = "5px";
+        keylog.style.color = "grey";
+        keylog.innerText = "Keys pressed: ";
+        keylog.style.fontFamily = "Trebuchet MS";
+        stopwatch.appendChild(keylog);
     
         footer = document.createElement("div");
         stopwatch.appendChild(footer);
@@ -92,6 +100,8 @@ window.addEventListener("load", function load(event) {
             time.innerHTML = m.toString() + ":" + s_display;
         };
     
+        keymap = {};
+
         document.addEventListener("keydown", function(e) {
             if (!e.repeat) {
                 if (e.key == startKey) {
@@ -122,7 +132,27 @@ window.addEventListener("load", function load(event) {
                     e.preventDefault();
                 }
             }
+
+            keymap[e.key] = true;
+            outstring = "Keys pressed: ";
+            for (keypressed in keymap) {
+                if (keymap[keypressed]) {
+                    outstring += keypressed + "; ";
+                }
+            }
+            keylog.innerText = outstring;
         }, false);
+
+        document.addEventListener("keyup", function(e) {
+            keymap[e.key] = false;
+            outstring = "Keys pressed: ";
+            for (keypressed in keymap) {
+                if (keymap[keypressed]) {
+                    outstring += keypressed + "; ";
+                }
+            }
+            keylog.innerText = outstring;
+        });
     });
 });
 
