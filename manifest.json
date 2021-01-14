@@ -19,7 +19,6 @@
         }
     ],
     "web_accessible_resources": [
-        "popup.html",
-        "popup.js"
+        "bg_translucent.png"
     ]
 }
