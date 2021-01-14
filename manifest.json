@@ -16,12 +16,6 @@
             "run_at": "document_end",
             "matches": ["*://*/*"],
             "js": ["ext_script.js"]
-        },
-        {
-            "run_at": "document_end",
-            "matches": ["*://*/*"],
-            "js": ["int_script.js"],
-            "all_frames": true
         }
     ],
     "web_accessible_resources": [
