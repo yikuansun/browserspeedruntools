@@ -44,6 +44,18 @@ window.addEventListener("load", function load(event) {
     splits.style.overflow = "scroll";
     stopwatch.appendChild(splits);
 
+    footer = document.createElement("div");
+    stopwatch.appendChild(footer);
+
+    settingsButton = document.createElement("button");
+    settingsButton.style.fontSize = "14px";
+    settingsButton.style.fontFamily = "Courier";
+    settingsButton.style.color = "white";
+    settingsButton.style.backgroundColor = scheme[2];
+    settingsButton.innerText = "Settings";
+    settingsButton.onclick = function() { chrome.runtime.sendMessage({"action": "openOptionsPage"}); };
+    footer.appendChild(settingsButton);
+
     updateClock = function() {
         console.log(clock)
         clock = now() - startTime;

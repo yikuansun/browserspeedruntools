@@ -19,6 +19,10 @@
         }
     ],
     "web_accessible_resources": [
-        "bg_translucent.png"
-    ]
+        "bg_translucent.png",
+        "settings.html",
+        "settings.js",
+        "icon16.png"
+    ],
+    "options_page": "settings.html"
 }
