@@ -91,7 +91,7 @@ window.addEventListener("load", function load(event) {
         decoIcon = document.createElement("img");
         decoIcon.src = chrome.runtime.getURL("icon128.png");
         decoIcon.style.position = "absolute";
-        decoIcon.style.bottom = "0";
+        decoIcon.style.bottom = "-2px";
         decoIcon.style.right = "10px";
         decoIcon.style.width = "50px";
         decoIcon.style.height = "50px";
