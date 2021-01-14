@@ -22,7 +22,8 @@
         "bg_translucent.png",
         "settings.html",
         "settings.js",
-        "icon16.png"
+        "icon16.png",
+        "icon128.png"
     ],
     "options_ui": {
         "page": "settings.html",

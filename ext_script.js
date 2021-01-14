@@ -87,6 +87,16 @@ window.addEventListener("load", function load(event) {
         settingsButton.innerText = "Settings";
         settingsButton.onclick = function() { chrome.runtime.sendMessage({"action": "openOptionsPage"}); };
         footer.appendChild(settingsButton);
+
+        decoIcon = document.createElement("img");
+        decoIcon.src = chrome.runtime.getURL("icon128.png");
+        decoIcon.style.position = "absolute";
+        decoIcon.style.bottom = "0";
+        decoIcon.style.right = "10px";
+        decoIcon.style.width = "50px";
+        decoIcon.style.height = "50px";
+        decoIcon.style.filter = "hue-rotate(" + (0 - parseFloat(hueRotate)).toString() + "deg)";
+        stopwatch.appendChild(decoIcon);
     
         updateClock = function() {
             clock = now() - startTime;
@@ -133,7 +143,7 @@ window.addEventListener("load", function load(event) {
                 }
             }
 
-            keymap[e.key] = true;
+            keymap["1234567890abcdefghijklmnopqrstuvwxyz".includes(e.key)?e.key.toUpperCase():e.code] = true;
             outstring = "Keys pressed: ";
             for (keypressed in keymap) {
                 if (keymap[keypressed]) {
@@ -144,7 +154,7 @@ window.addEventListener("load", function load(event) {
         }, false);
 
         document.addEventListener("keyup", function(e) {
-            keymap[e.key] = false;
+            keymap["1234567890abcdefghijklmnopqrstuvwxyz".includes(e.key)?e.key.toUpperCase():e.code] = false;
             outstring = "Keys pressed: ";
             for (keypressed in keymap) {
                 if (keymap[keypressed]) {
