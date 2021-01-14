@@ -12,6 +12,17 @@ window.addEventListener("load", function load(event) {
     
     iframe.src = chrome.runtime.getURL("popup.html");
     document.body.appendChild(iframe);
+
+    document.addEventListener("keydown", function(e) {
+        if (e.key == "Alt" || e.key == "Shift") {
+            iframe.focus();
+            e.preventDefault();
+        }
+    }, false);
+
+    iframe.addEventListener("focus", function(e) {
+        setTimeout(iframe.blur, 100);
+    }, false);
 });
 
 function toggle_iframe() {

@@ -19,7 +19,7 @@ updateClock = function() {
 
 document.addEventListener("keydown", function(e) {
     if (!e.repeat) {
-        if (e.altKey) {
+        if (e.key == "Alt") {
             if (AltToStartClock) {
                 clock = 0;
                 splits.innerHTML = "";
@@ -28,12 +28,11 @@ document.addEventListener("keydown", function(e) {
             }
             else {
                 clearInterval(mainLoop);
-                e.preventDefault();
                 AltToStartClock = true;
             }
             e.preventDefault();
         }
-        else if (e.shiftKey) {
+        else if (e.key == "Shift") {
             splitText = document.createElement("div");
             splitText.innerHTML = time.innerText;
             splitText.setAttribute("class", "splitText");
